@@ -1,0 +1,746 @@
+Total de codigos: 88
+
+Codigo: 909
+Cantidad de ocurrencias: 2
+Reportes:
+	192(C)(2)VEH MAN W/O GROSS NEG	calificación: 4
+
+--------------------
+Codigo: 999
+Cantidad de ocurrencias: 3
+Reportes:
+	197 JUSTIFIABLE HOMI-CIVILIAN	calificación: 8
+	187(A)  HOMICIDE	calificación: 9
+	664/187(A) ATTEMPTED HOMICIDE	calificación: 9
+
+--------------------
+Codigo: 1099
+Cantidad de ocurrencias: 1
+Reportes:
+	278.5(A)DEPRIVE RIGHT OF CUSTO	calificación: 3
+
+--------------------
+Codigo: 1210
+Cantidad de ocurrencias: 20
+Reportes:
+	211 PC ROBBERY-PURSE SNATCH	calificación: 4
+
+--------------------
+Codigo: 1211
+Cantidad de ocurrencias: 1
+Reportes:
+	211 PC  ROBBERY-BANK	calificación: 8
+
+--------------------
+Codigo: 1212
+Cantidad de ocurrencias: 18
+Reportes:
+	215(A) PC    CARJACKING	calificación: 3
+
+--------------------
+Codigo: 1299
+Cantidad de ocurrencias: 146
+Reportes:
+	211 PC ROBBERY- BUSINESS	calificación: 3
+	211 PC  ROBBERY UNSPECIFIED	calificación: 3
+	212.5(A)ROBBERY-INHAB DWELLING	calificación: 3
+	212.5(B) ROB-VICINITY OF ATM	calificación: 3
+
+--------------------
+Codigo: 1310
+Cantidad de ocurrencias: 1
+Reportes:
+	245(C) AWDW/NO FIREARM/OFFICER	calificación: 6
+
+--------------------
+Codigo: 1313
+Cantidad de ocurrencias: 99
+Reportes:
+	242 PC  BATTERY CIVILIAN	calificación: 8
+	240 PC ASSAULT/SIMPLE-CIVILIAN	calificación: 9
+	243.6 BATTERY SCHOOL EMPLOYEE	calificación: 8
+	243(B) PC  BATTERY - OFFICER	calificación: 9
+	241(B) ASSAULT ON POLICE OFFIC	calificación: 9
+	243(B) BATTERY DR/NURSE/EMERG	calificación: 9
+
+--------------------
+Codigo: 1315
+Cantidad de ocurrencias: 225
+Reportes:
+	243(E)1 BATTERY NONCOHAB SPOUS	calificación: 8
+	243(D) PC BATT/CIVILIAN W/INJ	calificación: 8
+	245(A)(2) AWDW/FIREARM/CIVILIA	calificación: 8
+	245(A)(1)AWDW/NO FIREARM/CIVIL	calificación: 8
+	243(C)(1)BATT EMERG PERSON-INJ	calificación: 8
+	368(B)(1) CRUELTY/ELDER/ W/INJ	calificación: 8
+	243.2(A)(1) BATT/SCHOOL INJURY	calificación: 8
+	243.3 BATT TRANS PERS/PASS/INJ	calificación: 8
+	243(C)2 PC BATT/PO WITH INJURY	calificación: 8
+	203 PC    MAYHEM	calificación: 9
+	368(C) CAUSE PAIN/INJ TO ELDER	calificación: 8
+
+--------------------
+Codigo: 1602
+Cantidad de ocurrencias: 18
+Reportes:
+	422 PC THREAT/INTENT TO TERROR	calificación: 3
+
+--------------------
+Codigo: 2099
+Cantidad de ocurrencias: 14
+Reportes:
+	451(B) PC ARSON OF INHAB STRUC	calificación: 6
+	451(D) PC  ARSON OF PROPERTY	calificación: 7
+	452(D)PC CAUSE FIRE OF PROPERT	calificación: 8
+
+--------------------
+Codigo: 2203
+Cantidad de ocurrencias: 135
+Reportes:
+	459 PC  BURGLARY BUSINESS	calificación: 2
+
+--------------------
+Codigo: 2204
+Cantidad de ocurrencias: 356
+Reportes:
+	459 PC  BURGLARY RESIDENCE	calificación: 2
+
+--------------------
+Codigo: 2206
+Cantidad de ocurrencias: 6
+Reportes:
+	466 PC   POSS OF BURG TOOLS	calificación: 2
+
+--------------------
+Codigo: 2299
+Cantidad de ocurrencias: 474
+Reportes:
+	459 PC  BURGLARY-UNSPECIFIED	calificación: 3
+	459 PC  BURGLARY VEHICLE	calificación: 2
+
+--------------------
+Codigo: 2301
+Cantidad de ocurrencias: 4
+Reportes:
+	487(C) PC  GRAND THEFT-PERSON	calificación: 2
+
+--------------------
+Codigo: 2302
+Cantidad de ocurrencias: 2
+Reportes:
+	484 PETTY THEFT-PURSE SNATCH	calificación: 2
+
+--------------------
+Codigo: 2303
+Cantidad de ocurrencias: 176
+Reportes:
+	487(A) PC GRAND THEFT	calificación: 2
+	484 PETTY THEFT-SHOPLIFT	calificación: 2
+	487(A) PC GRAND THEFT-SHOPLIFT	calificación: 2
+
+--------------------
+Codigo: 2304
+Cantidad de ocurrencias: 12
+Reportes:
+	487(A) GRAND THEFT-AUTO PARTS	calificación: 2
+	484 PC  PETTY THEFT AUTO PART	calificación: 2
+
+--------------------
+Codigo: 2305
+Cantidad de ocurrencias: 31
+Reportes:
+	484 PETTY THEFT CLOUT UNLOCKED	calificación: 2
+	487(A) GRAND THEFT-CLOUT-UNLOC	calificación: 2
+
+--------------------
+Codigo: 2307
+Cantidad de ocurrencias: 11
+Reportes:
+	484 PC-PETTY THEFT-COIN MACHIN	calificación: 2
+	487(A) GRAND THEFT-COIN MACHIN	calificación: 2
+
+--------------------
+Codigo: 2308
+Cantidad de ocurrencias: 140
+Reportes:
+	484 PC   PETTY THEFT/INSIDE	calificación: 2
+	487(A) GRAND THEFT-INSIDE	calificación: 2
+
+--------------------
+Codigo: 2309
+Cantidad de ocurrencias: 48
+Reportes:
+	484 PC  PETTY THEFT/ OUTSIDE	calificación: 2
+
+--------------------
+Codigo: 2310
+Cantidad de ocurrencias: 20
+Reportes:
+	1708 US   THEFT OF MAIL	calificación: 12
+
+--------------------
+Codigo: 2399
+Cantidad de ocurrencias: 262
+Reportes:
+	484 PC PETTY THEFT	calificación: 2
+	484 PETTY THEFT/LICENSE PLATE	calificación: 2
+	487(D)GRAND THEFT FIREARM/ANIM	calificación: 8
+	666 PC PETTY THEFT W/PRI CONV	calificación: 2
+	22435.2(A) BP POSS SHOP CART	calificación: 2
+	484 PC   THEFT-LIC PLATE TABS	calificación: 2
+	537(A)(1) DEFRAUD INKEEP/-$400	calificación: 2
+	368(D) THEFT-ELDER >400	calificación: 2
+	485 PC PT OF FOUND PROPERTY	calificación: 2
+	368(E) THEFT OF ELDER <$400	calificación: 2
+	498(B)(5) THEFT OF ELECTRICITY	calificación: 2
+
+--------------------
+Codigo: 2404
+Cantidad de ocurrencias: 881
+Reportes:
+	10851(A)VC TAKE VEH W/O OWNER	calificación: 1
+	10851 VC AUTO THEFT LOCATE	calificación: 1
+	10855 VC LSE/RENT NOT RETURNED	calificación: 1
+	487(D) PC GRAND THEFT AUTO	calificación: 1
+	BAIT CAR 10851 VC TAKE VEHICLE	calificación: 1
+
+--------------------
+Codigo: 2501
+Cantidad de ocurrencias: 21
+Reportes:
+	476 PC PASS FICTICIOUS CHECK	calificación: 4
+
+--------------------
+Codigo: 2503
+Cantidad de ocurrencias: 1
+Reportes:
+	FORGERY-COUNTERFEITING	calificación: 2
+
+--------------------
+Codigo: 2505
+Cantidad de ocurrencias: 1
+Reportes:
+	FORGERY-PASSING COUNTERFEIT	calificación: 2
+
+--------------------
+Codigo: 2506
+Cantidad de ocurrencias: 33
+Reportes:
+	475(C) PASS FORGED NOTE	calificación: 2
+	475(A)PC POSS FORGED CHK/NOTE	calificación: 2
+
+--------------------
+Codigo: 2589
+Cantidad de ocurrencias: 1
+Reportes:
+	470 PC FORGERY	calificación: 2
+
+--------------------
+Codigo: 2602
+Cantidad de ocurrencias: 2
+Reportes:
+	FRAUD-SWINDLE	calificación: 3
+
+--------------------
+Codigo: 2604
+Cantidad de ocurrencias: 94
+Reportes:
+	530.5 PC USE PERSONAL ID INFO	calificación: 3
+	530 PC FALSE PERS. REC PROP	calificación: 3
+	529 PC FALSE PERSONATION	calificación: 3
+	538D PC IMPERSON PEACE OFFICER	calificación: 3
+
+--------------------
+Codigo: 2605
+Cantidad de ocurrencias: 97
+Reportes:
+	484G(B) PC ACCESS CARD FRAUD	calificación: 3
+	484J PC PUBLISH CARD INFO	calificación: 3
+	484G(A)PC USE FORGED CARD	calificación: 3
+	484E(A)PC THEFT OF CREDIT CARD	calificación: 3
+	484E(D)PC FRAUD POSS CARD INFO	calificación: 3
+
+--------------------
+Codigo: 2699
+Cantidad de ocurrencias: 5
+Reportes:
+	532 PC FRAUD OBTAIN MONEY ETC	calificación: 3
+	587C PC EVADE PAYMENT RAILFARE	calificación: 3
+
+--------------------
+Codigo: 2799
+Cantidad de ocurrencias: 8
+Reportes:
+	503 PC   EMBEZZLEMENT	calificación: 3
+	506 PC EMBEZZLEMENT/CONTRACTOR	calificación: 3
+	508 PC   EMBEZZLEMENT/EMPLOYEE	calificación: 3
+
+--------------------
+Codigo: 2803
+Cantidad de ocurrencias: 25
+Reportes:
+	496(A) RECEIVE STOLEN PROPERTY	calificación: 3
+	496(A) PC REC STOLEN AUTO PART	calificación: 3
+
+--------------------
+Codigo: 2999
+Cantidad de ocurrencias: 356
+Reportes:
+	594(B)(1)PC  VANDALISM +$400	calificación: 1
+	594(B)(2)(A) VANDALISM/ -$400	calificación: 1
+	594(B)(1)VANDALISM GRAF +$400	calificación: 1
+	594(B)(2)(A)VANDALISM GRAF-400	calificación: 1
+	1705 US DESTRUCT OF MAIL RECEP	calificación: 4
+	10852 VC VEHICLE TAMPERING	calificación: 1
+	594.3(A)VANDAL/PLACE OF WORSHI	calificación: 1
+	10853 VC MALIC MISCHIEF TO VEH	calificación: 1
+	603  FORCED ENTRY/PROP DAMAGE	calificación: 2
+
+--------------------
+Codigo: 3522
+Cantidad de ocurrencias: 2
+Reportes:
+	11352(B)HS TRANS SUBST TO CNTY	calificación: 7
+	11351 HS POSS/SALE OPIATE/NARC	calificación: 8
+
+--------------------
+Codigo: 3532
+Cantidad de ocurrencias: 66
+Reportes:
+	11351.5 HS POSS SALE RCK COCAI	calificación: 9
+	11350(A)HS POSS CNTRL SUBST	calificación: 7
+	11352(A)HS SALE/TRANS CNTL SUB	calificación: 9
+
+--------------------
+Codigo: 3560
+Cantidad de ocurrencias: 9
+Reportes:
+	11359 HS POSS FOR SALE MARIJ	calificación: 7
+	11360(A)HS SALE/TRANSP MARIJ	calificación: 9
+
+--------------------
+Codigo: 3562
+Cantidad de ocurrencias: 56
+Reportes:
+	11357(B)HS POSS -28.5GR MARIJ	calificación: 7
+	11357(C)HS POSS +28.5GR MARIJ	calificación: 7
+	11357(E) MNR POSS MARIJ SCHOOL	calificación: 9
+
+--------------------
+Codigo: 3563
+Cantidad de ocurrencias: 1
+Reportes:
+	11358 HS CULTIVATE MARIJUANA	calificación: 9
+
+--------------------
+Codigo: 3564
+Cantidad de ocurrencias: 1
+Reportes:
+	11361(B)HS ADLT FURN MNR MARIJ	calificación: 7
+
+--------------------
+Codigo: 3570
+Cantidad de ocurrencias: 2
+Reportes:
+	11379(A)HS SELL/TRANSP AMPHET	calificación: 9
+
+--------------------
+Codigo: 3571
+Cantidad de ocurrencias: 10
+Reportes:
+	11378 HS POSS/SALE AMPHETAMINE	calificación: 9
+
+--------------------
+Codigo: 3572
+Cantidad de ocurrencias: 58
+Reportes:
+	11377(A)HS POSS AMPHETAMINES	calificación: 7
+
+--------------------
+Codigo: 3582
+Cantidad de ocurrencias: 9
+Reportes:
+	11350(B)HS POSSESS QUAALUDES	calificación: 7
+
+--------------------
+Codigo: 3599
+Cantidad de ocurrencias: 129
+Reportes:
+	11364 HS POSS DRUG PARAPH	calificación: 7
+	11532(A)HS LOITER DRG ACTIVITY	calificación: 7
+	4140 BP  POSS OF HYPO NEEDLE	calificación: 7
+	11377(A)HS POSS CNTRL SUBST	calificación: 7
+	11550(A)HS UNDER INFL NARCOTIC	calificación: 7
+	11379(A)HS SALE/TRAN CNTRL SUB	calificación: 9
+	11366 HS MAINTN PLACE TO SELL	calificación: 9
+	11378 HS POSS CNTRL SUB/SALE	calificación: 9
+
+--------------------
+Codigo: 3605
+Cantidad de ocurrencias: 2
+Reportes:
+	314.1 PC   INDECENT EXPOSURE	calificación: 2
+
+--------------------
+Codigo: 3611
+Cantidad de ocurrencias: 1
+Reportes:
+	647(I) PEEPING TOM-INHAB DWELL	calificación: 2
+
+--------------------
+Codigo: 3699
+Cantidad de ocurrencias: 22
+Reportes:
+	290(A)(1)(D) FAIL TO REG-5 DAY	calificación: 1
+	290(F)1 W/I 5 DAYS ADD CHANGE	calificación: 1
+	290(G)(1) FAIL TO REG SEX OFFE	calificación: 6
+	243.4(E)(1)TOUCH FOR SEX PLEAS	calificación: 7
+	290(A)(1)(A) FAIL REG-CHG ADD	calificación: 1
+	243.4(A) SEXUAL BATTERY	calificación: 9
+
+--------------------
+Codigo: 3805
+Cantidad de ocurrencias: 1
+Reportes:
+	32210 EC WILFL DISTURB PUB SCH	calificación: 2
+
+--------------------
+Codigo: 4004
+Cantidad de ocurrencias: 39
+Reportes:
+	647(B) PC   PROSTITUTION	calificación: 2
+
+--------------------
+Codigo: 4099
+Cantidad de ocurrencias: 12
+Reportes:
+	653.22(A) LOITER PROSTITUTION	calificación: 5
+
+--------------------
+Codigo: 4104
+Cantidad de ocurrencias: 1
+Reportes:
+	25662(A)BP POSS ALC BY MINOR	calificación: 6
+
+--------------------
+Codigo: 4199
+Cantidad de ocurrencias: 3
+Reportes:
+	25661 BP FALSE EVIDENCE OF AGE	calificación: 1
+	25632 BP CONSM ALC AFT CLOSING	calificación: 1
+
+--------------------
+Codigo: 4801
+Cantidad de ocurrencias: 10
+Reportes:
+	148(A)(1)PC RESIST PEACE OFFCR	calificación: 8
+
+--------------------
+Codigo: 4803
+Cantidad de ocurrencias: 17
+Reportes:
+	148.9 PC FALSE ID TO OFFICER	calificación: 2
+	148.1(A)PC FALSE REPT OF BOMB	calificación: 2
+	31 VC FALSE INFO TO OFFICER	calificación: 2
+	148.4(A)PC TAMPER FIRE PROT EQ	calificación: 2
+
+--------------------
+Codigo: 4805
+Cantidad de ocurrencias: 1
+Reportes:
+	136.1(C)(1) PC DISSUADE V/W	calificación: 2
+
+--------------------
+Codigo: 4808
+Cantidad de ocurrencias: 1
+Reportes:
+	32 PC ACCESSORY TO A CRIME	calificación: 2
+
+--------------------
+Codigo: 4902
+Cantidad de ocurrencias: 13
+Reportes:
+	1551(A) FUGITIVE FROM JUSTICE	calificación: 8
+
+--------------------
+Codigo: 4999
+Cantidad de ocurrencias: 1
+Reportes:
+	836.6(B) PC ESCAPE FROM ARREST	calificación: 7
+
+--------------------
+Codigo: 5005
+Cantidad de ocurrencias: 10
+Reportes:
+	166(A)(4) WILFUL DISOBEY CT OR	calificación: 6
+
+--------------------
+Codigo: 5007
+Cantidad de ocurrencias: 25
+Reportes:
+	273.6(A) PC VIO DV COURT ORDER	calificación: 6
+
+--------------------
+Codigo: 5011
+Cantidad de ocurrencias: 5
+Reportes:
+	3056 PC PAROLE VIOLATION	calificación: 2
+
+--------------------
+Codigo: 5012
+Cantidad de ocurrencias: 12
+Reportes:
+	1203.2 PC VIOLATION OF PROBATI	calificación: 2
+
+--------------------
+Codigo: 5202
+Cantidad de ocurrencias: 5
+Reportes:
+	12025(A)2)CNCLD GUN ON PER/FEL	calificación: 9
+	12025(A)1)CONCLD GUN VEH/FEL	calificación: 9
+	12025(B)6 UNREG/CONCLED FIREAR	calificación: 9
+	12025(A)2)CONCL GUN ON PER/MSD	calificación: 8
+
+--------------------
+Codigo: 5207
+Cantidad de ocurrencias: 2
+Reportes:
+	12303.3 PC DEST DVC INTENT INJ	calificación: 2
+	12303.3 PC FIRE BOMB INT INJ	calificación: 8
+
+--------------------
+Codigo: 5212
+Cantidad de ocurrencias: 50
+Reportes:
+	12020(A)(4) PC DIRK/DAGGER	calificación: 6
+	417(A)1) PC BRANDISH NON-GUN	calificación: 6
+	12022.1 PC COMMIT FEL ON BAIL	calificación: 8
+	12020(A)1) PROHIBITED FIREARM	calificación: 8
+	12021(A)(1)PC FELON POSS FRARM	calificación: 9
+	417(A)2) PC BRANDISH FIREARM	calificación: 9
+	12031(A)(1)PC LOADED GUN/PUB-M	calificación: 9
+	653K PC POSS/SELL SWITCHBLADE	calificación: 6
+	626.10(A) PC POSS WPN SCHL ZN	calificación: 9
+	12101(B)1)PC MINOR POSS AMMO	calificación: 8
+
+--------------------
+Codigo: 5213
+Cantidad de ocurrencias: 24
+Reportes:
+	246 PC SHOOT OCCUP DWELL/VEH	calificación: 8
+	246.3 PC NEGL DISCH FIREARM	calificación: 9
+	247(B) PC SHOOT UNOCC BLDG/VEH	calificación: 8
+
+--------------------
+Codigo: 5299
+Cantidad de ocurrencias: 7
+Reportes:
+	12420 PC SELL/TRANSP TEAR GAS	calificación: 6
+	12403.7(G) PC ILLGL POSS TRGAS	calificación: 6
+	4574(A)WEAPON/TEAR GAS IN JAIL	calificación: 9
+	417.4 PC BRANDISH IMIT FIREARM	calificación: 9
+	12022(A)(1)PC ARMED COMM FEL	calificación: 9
+	12316(B)(1)FELON POSSESS AMMO	calificación: 8
+
+--------------------
+Codigo: 5307
+Cantidad de ocurrencias: 12
+Reportes:
+	653M(B) PC ANNOY/RPT CALL HOME	calificación: 1
+
+--------------------
+Codigo: 5309
+Cantidad de ocurrencias: 17
+Reportes:
+	653M(A) PC OBSCENE/THREAT CALL	calificación: 1
+
+--------------------
+Codigo: 5311
+Cantidad de ocurrencias: 37
+Reportes:
+	647(F) PC PUB INTOX-DETOX ONLY	calificación: 6
+	647(F) PC DIP - DISORDERLY	calificación: 6
+	415(1) PC DISTURB PEACE/FIGHT	calificación: 8
+
+--------------------
+Codigo: 5399
+Cantidad de ocurrencias: 3
+Reportes:
+	415.5(A)(1) PC FIGHT SCHOOL GR	calificación: 6
+	415(3) PC DIST PEACE OFF WORDS	calificación: 4
+
+--------------------
+Codigo: 5400
+Cantidad de ocurrencias: 357
+Reportes:
+	TRAFFIC-ACCIDENT INJURY	calificación: 9
+	TRAFFIC-ACCIDENT-NON INJURY	calificación: 6
+
+--------------------
+Codigo: 5401
+Cantidad de ocurrencias: 133
+Reportes:
+	20002(A) HIT/RUN	calificación: 6
+	20001(A) VC HIT/RUN INJ/DEATH	calificación: 9
+
+--------------------
+Codigo: 5404
+Cantidad de ocurrencias: 105
+Reportes:
+	23152(A) VC DUI-ALCOHOL/DRUGS	calificación: 6
+	23153(A) VC DUI CAUSE INJURY	calificación: 7
+	23220 VC DRINKING WHILE DRVING	calificación: 8
+	23152(B) VC DUI BA .08 OR MORE	calificación: 6
+	23550.5 VC 4+DUI IN 10 YEARS	calificación: 6
+	COLLISION/ACCIDENT BOATS	calificación: 6
+	21200.5 VC BICYCLE DUI	calificación: 6
+
+--------------------
+Codigo: 5499
+Cantidad de ocurrencias: 42
+Reportes:
+	23103(A) RECKLESS ON HIGHWAY	calificación: 6
+	2800.2(A) VC EVADING/RECKLESS	calificación: 6
+	12500(A) VC UNLIC DRIVER	calificación: 6
+	14601.1(A) VC LIC SUSP OTHER	calificación: 6
+	TRAFFIC OFFENSE	calificación: 6
+	23222(B)POSSESS MARIJ IN VEH	calificación: 9
+	4462.5 VC FALSE TAB/AVOID REG	calificación: 6
+	23110(B) VC THROW AT VEH W/INT	calificación: 7
+	4463(A)(1) VC ALTER REG	calificación: 6
+	14601(A) VC LIC SUSP NEGLIGENT	calificación: 6
+
+--------------------
+Codigo: 5599
+Cantidad de ocurrencias: 7
+Reportes:
+	308(B) PC MINOR POSS TOBACCO	calificación: 4
+	12671 HS SALE/POSS ILLGL FRWRK	calificación: 8
+
+--------------------
+Codigo: 5707
+Cantidad de ocurrencias: 11
+Reportes:
+	602(K)TRESPASS:INJURE PROPERTY	calificación: 2
+	602(N)TRESP DRIVE ON PRIVATE P	calificación: 2
+	602.1(A)TRES OBST BUSIN OPERAT	calificación: 2
+	602(L)(1)TRESPASS REFUSE TO LV	calificación: 2
+	602.5 PC ENTRY OF PROPERTY	calificación: 4
+	626.2 PC UNAUTH ENTRY CAMPUS	calificación: 4
+
+--------------------
+Codigo: 7000
+Cantidad de ocurrencias: 2470
+Reportes:
+	ASSAULT WITH WEAPON - I RPT	calificación: 1
+	SUSP PERS-NO CRIME - I RPT	calificación: 1
+	TELEPEST -I RPT	calificación: 1
+	TRAFFIC - I RPT	calificación: 1
+	HARASSMENT - I RPT	calificación: 1
+	LOST PROPERTY - I RPT	calificación: 1
+	FOUND PROPERTY - I RPT	calificación: 1
+	THREATS - I RPT	calificación: 1
+	SHOOT INTO OCCUP DWELL - I RPT	calificación: 1
+	MISCELLANEOUS I RPT (ZMISC)	calificación: 1
+	TOWED/STORED VEH-14602.6	calificación: 1
+	CASUALTY REPORT	calificación: 1
+	DUI I RPT	calificación: 1
+	5150 WI DANGER SELF/OTHERS	calificación: 1
+	TOWED/STORED VEHICLE	calificación: 1
+	IMPOUNDED VEHICLE	calificación: 1
+	PERSON INFORMATION - I RPT	calificación: 1
+	MISSING PERSON I RPT	calificación: 1
+	BURGLARY - I RPT	calificación: 1
+	MISSING PERSON	calificación: 1
+	O/S AGENCY -ASSISTANCE- I RPT	calificación: 1
+	GANG ACTIVITY - I RPT	calificación: 1
+	NON INJ HR/MAIL OUT REPORT	calificación: 1
+	VANDALISM - I RPT	calificación: 1
+	ROBBERY - I RPT	calificación: 1
+	POSS STOLEN VEHICLE- I RPT	calificación: 1
+	BATTERY - I RPT	calificación: 1
+	PETTY THEFT - I RPT	calificación: 1
+	FAMILY DISTURBANCE - I RPT	calificación: 1
+	PROTECTIVE CUSTODY-I RPT	calificación: 1
+	CHILD WELFARE - I RPT	calificación: 1
+	ACCIDENTAL FIRES/ARSON -I RPT	calificación: 1
+	BUSINESS PERMITS - I RPT	calificación: 1
+	POSSIBLE MENTAL - I RPT	calificación: 1
+	NARCOTICS SUSP/EVID/ACT- I RPT	calificación: 1
+	WARRANT SERVED - I RPT	calificación: 1
+	3056 PAROLE VIO - I RPT	calificación: 1
+	BOMBS/THREATS/EXPLOSIV- I RPT	calificación: 1
+	JUVENILE PROBLEMS - I RPT	calificación: 1
+	POSSIBLE FINANCIAL CRIME-I RPT	calificación: 1
+	SAFEKEEPING - I RPT	calificación: 1
+	MISSING PERSON LOCATE O/S ASSI	calificación: 1
+	FRAUD OR BUNCO - I RPT	calificación: 1
+	GRAND THEFT - I RPT	calificación: 1
+	SUSPICIOUS VEHICLE - I RPT	calificación: 1
+	RECOVERED PROPERTY - I RPT	calificación: 1
+	PROB VIOLA/FEL-MISD - I RPT	calificación: 1
+	ABC LICENSE VIO/INFO - I RPT	calificación: 1
+	HIT AND RUN /SUSPECTS- I RPT	calificación: 1
+	DAMAGE - I RPT	calificación: 1
+	POSSIBLE STOLEN PROPERTY-I RPT	calificación: 1
+	TERRORIST THREATS - I RPT	calificación: 1
+	JUVENILE DISURBANCE - I RPT	calificación: 1
+	INTOX REPORT/ADMIN PER - I RPT	calificación: 1
+	CHILD CUSTODY - I RPT	calificación: 1
+	FOUND EVIDENCE-NON NARC -I RPT	calificación: 1
+	NEIGHBORHOOD DISTURBANCE-I RPT	calificación: 1
+	ELDER ABUSE/PHYS/MENTAL-I RPT	calificación: 1
+	FILE-UNABLE TO DEFINE - I RPT	calificación: 1
+	849(B)(1) CERTIFICATE OF RELEA	calificación: 1
+	CAR CLOUT -  I RPT	calificación: 1
+	HOMICIDE ASSAULT - I RPT	calificación: 1
+	TRESPASS OR PROWLER- I RPT	calificación: 1
+	LOST PROPERTY-MATRICULA I RPT	calificación: 1
+	GRAFFITI PROBLEMS- I RPT	calificación: 1
+	FALSE PERSONATION - I RPT	calificación: 1
+	RPT # CANCELLED- I RPT	calificación: 1
+	HAZARDOUS SITUATION - I RPT	calificación: 1
+	ABANDONED VEHICLE - I RPT	calificación: 1
+	FRAUDULENT DOCUMENTS- I RPT	calificación: 1
+	601(A) WI JUVENILE INCORRIGIBL	calificación: 1
+	VICE/GAMBLING ACT - I RPT	calificación: 1
+	TRAFFIC ARREST FOR DA-I RPT	calificación: 1
+	WANTED SUBJ-O/S WANT/ I RPT	calificación: 1
+
+--------------------
+Codigo: 7299
+Cantidad de ocurrencias: 1
+Reportes:
+	647(A) PC LEWD CONDUCT	calificación: 2
+
+--------------------
+Codigo: 7399
+Cantidad de ocurrencias: 30
+Reportes:
+	9.04.050 A DRINKING IN PUBLIC	calificación: 1
+	9.04.070 URINATE/DEFECATE PUB	calificación: 2
+	9.40.020(A) JUVENILE CURFEW	calificación: 1
+	12.72.060I ADULT LOITER PLYGRD	calificación: 1
+	12.52.030 SCC UNLAWFUL CAMPING	calificación: 1
+	374.3(A) PC ILLEGAL DUMPING	calificación: 1
+	9.04.050C POSS OPEN CONTAINER	calificación: 1
+	5.136.050 NO TAXICAB PERMIT	calificación: 1
+	10.48.150 E FALSIFY PKG PERMIT	calificación: 1
+	374.4(A) LITTERING	calificación: 1
+	13.10.200 SCC DUMP PUB PLACES	calificación: 1
+	9.44.220 SCC ANIMAL AT LARGE	calificación: 1
+	99170 PUBLIC UTILITIES CODE	calificación: 1
+
+--------------------
+Codigo: 8101
+Cantidad de ocurrencias: 1
+Reportes:
+	1767.3 WI CYA PAROLE HOLD	calificación: 2
+
+--------------------
+Codigo: 8102
+Cantidad de ocurrencias: 1
+Reportes:
+	JUVENILE OFFENDER-PROBATION	calificación: 1
+
+--------------------
