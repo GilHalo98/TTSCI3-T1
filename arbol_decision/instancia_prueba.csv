@@ -1,0 +1,13 @@
+Alt,Bar,Vier,Ham,Clientes,Precio,Llov,Res,Tipo,Est,Esperar
+Sí,No,No,Sí,Algunos,$$$,No,Sí,Francés,0-10,Sí
+Sí,No,No,Sí,Lleno,$,No,No,Tailandés,30-60,No
+No,Sí,No,No,Algunos,$,No,No,Hamburg.,0-10,Sí
+Sí,No,Sí,Sí,Lleno,$,Sí,No,Tailandés,10-30,Sí
+Sí,No,Sí,No,Lleno,$$$,No,Sí,Francés,>60,No
+No,Sí,No,Sí,Algunos,$$,Sí,Sí,Italiano,0-10,Sí
+No,Sí,No,No,Ninguno,$,Sí,No,Hamburg.,0-10,No
+No,No,No,Sí,Algunos,$$,Sí,Sí,Tailandés,0-10,Sí
+No,Sí,Sí,No,Lleno,$,Sí,No,Hamburg.,>60,No
+Sí,Sí,Sí,Sí,Lleno,$$$,No,Sí,Italiano,10-30,No
+No,No,No,No,Ninguno,$,No,No,Tailandés,0-10,No
+Sí,Sí,Sí,Sí,Lleno,$,No,No,Hamburg.,30-60,Sí
