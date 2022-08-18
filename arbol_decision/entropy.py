@@ -3,42 +3,12 @@ from os import system
 from fractions import Fraction
 
 
-def I(*datos, base=10):
-    inf_mutua = []
-
-    for E in datos:
-        inf_mutua.append(-log(E, base))
-
-    return inf_mutua
+def I(P: 'float | Fraction', base: 'int') -> float:
+    return -log(P, base) if P != 0 else 0
 
 
-def H(*datos, base=10):
-    entropia = []
-
-    inf_mutua = I(*datos, base=base)
-
-    for E, Ie in zip(datos, inf_mutua):
-        entropia.append(E * Ie)
-
-    return entropia
-
-
-def I(P, base):
-    inf_mutua = []
-
-    for Pi in P:
-        inf_mutua.append(-log(Pi, base))
-
-    return inf_mutua
-
-
-def H(P, I):
-    entropia = []
-
-    for Pi, Ii in zip(P, I):
-        entropia.append(Pi * Ii)
-
-    return entropia
+def H(P: 'float | Fraction', I: 'float | Fraction') -> float:
+    return P * I
 
 
 def probabilidades(data):
