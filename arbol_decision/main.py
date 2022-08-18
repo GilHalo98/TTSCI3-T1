@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from os import system
 from csv import reader
 from fractions import Fraction
@@ -55,10 +57,17 @@ def contar_todo(datos_atributo):
     return conteo
 
 
-def contar_contra_meta(atributo, posibles_valores, posibles_valores_meta, long_dataset, dataset):
-    # Contar los valores positivos y negatios por atributos contra el atributo meta.
-    # retorna el conteo para poder calcular la entropia del atributo para verificar
-    # si es un buen atributo o un atributo invalido.
+def contar_contra_meta(
+    atributo,
+    posibles_valores,
+    posibles_valores_meta,
+    long_dataset,
+    dataset
+):
+    # Contar los valores positivos y negatios por atributos contra el
+    # atributo meta. retorna el conteo para poder calcular la entropia
+    # del atributo para verificar si es un buen atributo o un
+    # atributo invalido.
     conteos = {}
 
     # Por cada posible valor en el atributo.
@@ -116,15 +125,19 @@ def main():
         if atributo != atributo_meta:
             # Enumeramos los posibles valores para el atributo.
             posibles_valores = enumerar_valores(atributo, dataset)
-            print('\tatributo: {}, posibles valores: {}'.format(atributo, posibles_valores))
+            print('\tatributo: {}, posibles valores: {}'.format(
+                atributo,
+                posibles_valores
+            ))
 
             # Contamos la ocurrencia del valor sobre el atributo.
             conteo = contar_todo(dataset[atributo])
 
             print('\tconteo de valores del atributo: {}'.format(conteo))
 
-            # Contamos la ocurrencia de los posibles valores de los atributos y sus valores
-            # en el estado meta, positivos y negativos.
+            # Contamos la ocurrencia de los posibles valores de los
+            # atributos y sus valores en el estado meta,
+            # positivos y negativos.
             conteo_meta = contar_contra_meta(
                 atributo,
                 posibles_valores,
@@ -135,13 +148,6 @@ def main():
 
             print('\tconteo contra meta: {}'.format(conteo_meta))
 
-            # Ahora se utiliza una heuristica constructiva Best-Found con funcion greedy h(i) = 1 - H(Ei)
-            # para indicar cual es el mejor atributo para realizar el arbol.
-            # prob = probabilidades()
-
-            base_log = 2 # if len(conteo) <= 2 else 10
-            print('\tBase logaritmica a usar: {}'.format(base_log))
-
             # Calculamos las probabilidades de la informacion de los atributos
             # en referencia al atributo meta.
             probabilidades_meta = {}
@@ -149,7 +155,45 @@ def main():
             for valor in posibles_valores:
                 probabilidades_meta[valor] = probabilidades(conteo_meta[valor])
 
-            print(probabilidades_meta)
+            print('\tProbabilidades contra meta: {}'.format(probabilidades_meta))
+
+            # Ahora se utiliza una heuristica constructiva Best-Found
+            # con funcion greedy h(i) = 1 - H(Ei) para indicar cual
+            # es el mejor atributo para realizar el arbol.
+
+            # Determinamos la base del logaritmo para utilizar.
+            base_log = 2 # if len(conteo) <= 2 else 10
+            print('\tBase logaritmica a usar: {}'.format(base_log))
+
+            # Calculamos las probabilidades dado el conteo de los
+            # valores del atributo.
+            prob = probabilidades(conteo)
+
+            # Calculamos la informacion mutua o sorpresa del valor
+            # del atributo.
+            H_valor = 0
+            for valor in probabilidades_meta:
+                # Obtenemos la probabilidad del valor respecto a su
+                # atributo.
+                prob_valor = prob[valor]
+
+                # Primero calculamos la entropia de cada valor relativo
+                # al atributo meta por separado.
+                He = 0
+                for valor_meta in probabilidades_meta[valor]:
+                    prob__valor_meta = probabilidades_meta[valor][valor_meta]
+                    I_valor_meta = I(prob__valor_meta, 2)
+                    He += H(prob__valor_meta, I_valor_meta)
+                print('\tValor: ', valor, '{} * {} = {}'.format(
+                    prob_valor,
+                    He,
+                    prob_valor * He
+                ))
+                H_valor += prob_valor * He
+
+            ganancia = 1 - H_valor
+
+            print('\tGanancia({}) = {}'.format(atributo, ganancia))
 
             print('-'*100)
     '''
