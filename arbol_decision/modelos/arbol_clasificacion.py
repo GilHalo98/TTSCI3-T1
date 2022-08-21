@@ -237,6 +237,10 @@ class Arbol_Clasificacion():
 
         return best
 
+    def generar_sub_arbol(self, dataset: dict, atributo_pivote: str) -> None:
+        # Genera un sub-arbol de decision.
+        pass
+
     def entrenar(self) -> None:
         '''
             Funcion de entrenamiento del arbol de clasificacion.
@@ -283,7 +287,11 @@ class Arbol_Clasificacion():
                 posibles_valores_meta
             )
 
-            # Genera un sub-arbol
+            # Genera un sub-arbol.
+            self.generar_sub_arbol(
+                dataset_entrenamiento,
+                mejor_atributo['atributo']
+            )
 
             # Si el atributo seleccionado contiene hojas puras
                 # Remueve las instancias del dataset que se contengan en la hoja
