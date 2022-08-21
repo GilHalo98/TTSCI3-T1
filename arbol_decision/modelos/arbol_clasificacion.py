@@ -10,7 +10,7 @@
 # Librerias estandar.
 import copy
 import fractions
-from entropy import I, H
+from util.entropy import I, H
 
 
 class Arbol_Clasificacion():

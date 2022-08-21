@@ -18,7 +18,7 @@ import argparse
 # Librerias de terceros.
 
 # Librerias propias.
-from entropy import probabilidades, I, H
+from util.entropy import probabilidades, I, H
 from modelos.arbol_clasificacion import Arbol_Clasificacion
 
 
