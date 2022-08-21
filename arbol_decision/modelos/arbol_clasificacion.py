@@ -99,7 +99,11 @@ class Arbol_Clasificacion():
 
         return probabilidades
 
-    def movimiento(self, dataset_entrenamiento: dict, valores_atributo_meta) -> None:
+    def movimiento(
+        self,
+        dataset_entrenamiento: dict,
+        valores_atributo_meta
+    ) -> None:
         # Funcion movimiento, esta funcion genera un candidato para la
         # heuristica constructiva.
         # Por cada atributo en el dataset.

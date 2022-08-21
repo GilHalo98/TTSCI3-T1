@@ -49,7 +49,7 @@ def format_args() -> argparse.Namespace:
     return args
 
 
-def cargar_instancias(filedir: 'str'):
+def cargar_instancias(filedir: 'str') -> 'tuple[dict, int]':
     # Se carga la instancia desde un archivo csv y se
     # pasa a un formato dict.
     instancias = {}
