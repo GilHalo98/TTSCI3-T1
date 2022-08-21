@@ -1,5 +1,4 @@
 from math import log
-from os import system
 from fractions import Fraction
 
 
