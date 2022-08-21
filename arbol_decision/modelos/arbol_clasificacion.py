@@ -18,7 +18,7 @@ class Arbol_Clasificacion():
         dataset: dict,
         atributo_meta: str,
         longitud_dataset: int,
-    ) -> None:    
+    ) -> None:
         '''
             Dataset de entrenamiento del arbol de clasificacion.
 
@@ -82,12 +82,36 @@ class Arbol_Clasificacion():
         self,
         dataset: dict,
         atributo: str,
+        valores_atributo_meta: 'list[str]',
+        valores_atributo: 'list[str]',
     ) -> None:
         # Contar los valores positivos y negatios por atributos contra el
         # atributo meta. retorna el conteo para poder calcular la entropia
         # del atributo para verificar si es un buen atributo o un
         # atributo invalido.
+        conteos = {}
+
+        # Se calcula la longitud de la instancia.
         longitud_dataset = len(list(dataset.values())[0])
+
+        # Poblamos el diccionario de conteos con el valor del atributo
+        # y los valores del atributo meta.
+        for valor_atributo in valores_atributo:
+            conteo = {}
+
+            for valor_meta in valores_atributo_meta:
+                conteo[valor_meta] = 0
+
+            conteos[valor_atributo] = conteo
+
+        # Contamos los valores con respecto a los valores de la meta.
+        for index in range(longitud_dataset):
+            valor_meta = dataset[atributo][index]
+            valor_atributo = dataset[self.atributo_meta][index]
+
+            conteos[valor_atributo][valor_meta] += 1
+
+        return conteos
 
     def probabilidades(data):
         # Calcula la probabilidad de suceso de un evento dado.
@@ -102,7 +126,7 @@ class Arbol_Clasificacion():
     def movimiento(
         self,
         dataset_entrenamiento: dict,
-        valores_atributo_meta
+        valores_atributo_meta: 'list[str]',
     ) -> None:
         # Funcion movimiento, esta funcion genera un candidato para la
         # heuristica constructiva.
@@ -128,7 +152,11 @@ class Arbol_Clasificacion():
                 conteo_contra_meta = self.contar_valores_contra_meta(
                     dataset_entrenamiento,
                     atributo,
+                    valores_atributo_meta,
+                    posibles_valores_atributo,
                 )
+
+                print(conteo_contra_meta)
 
                 yield {
                     'atributo': atributo,
@@ -184,7 +212,7 @@ class Arbol_Clasificacion():
 
                 - aquellos valores en grupos puros o hojas puras
                     quitarlos del dataset
-                
+
                 - si existe un atributo que ya no contenga hojas impuras
                     quitarlo del dataset
 
@@ -215,5 +243,5 @@ class Arbol_Clasificacion():
 
             # Si el atributo no contiene mas hojas impuras
                 # Remueve el atributo del dataset
-                
+
             break
