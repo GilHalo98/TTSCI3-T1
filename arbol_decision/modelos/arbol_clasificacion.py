@@ -10,6 +10,7 @@
 # Librerias estandar.
 import copy
 import fractions
+from entropy import I, H
 
 
 class Arbol_Clasificacion():
@@ -106,14 +107,14 @@ class Arbol_Clasificacion():
 
         # Contamos los valores con respecto a los valores de la meta.
         for index in range(longitud_dataset):
-            valor_meta = dataset[atributo][index]
-            valor_atributo = dataset[self.atributo_meta][index]
+            valor_atributo = dataset[atributo][index]
+            valor_meta = dataset[self.atributo_meta][index]
 
             conteos[valor_atributo][valor_meta] += 1
 
         return conteos
 
-    def probabilidades(data):
+    def probabilidades(self, data: dict) -> dict:
         # Calcula la probabilidad de suceso de un evento dado.
         probabilidades = {}
         total = sum(list(data.values()))
@@ -122,6 +123,33 @@ class Arbol_Clasificacion():
             probabilidades[dato] = fractions.Fraction(data[dato], total)
 
         return probabilidades
+
+    def calcular_ganancia(
+        self,
+        probabilidades_atributo: dict,
+        probabilidades_meta: dict,
+        redondeo: int = 10,
+    ) -> float:
+        # Calcula la ganancia de un atributo dado.
+        H_valor = 0
+
+        # Para poder calcular la ganancia del atributo se calcual la
+        # entropia de cada valor con respecto al atributo meta
+        # y se multiplica por la probabilidad del atributo.
+        for valor in probabilidades_meta:
+            probabilidad_valor = probabilidades_atributo[valor]
+
+            He = 0
+            # Se calcula la entropia del atributo con respecto a sus
+            # valores y el atributo meta.
+            for valor_meta in probabilidades_meta[valor]:
+                probabilidad_valor_meta = probabilidades_meta[valor][valor_meta]
+                I_valor_meta = I(probabilidad_valor_meta, 2)
+                He += H(probabilidad_valor_meta, I_valor_meta)
+
+            H_valor += probabilidad_valor * He
+
+        return round(1 - H_valor, redondeo)
 
     def movimiento(
         self,
@@ -137,7 +165,7 @@ class Arbol_Clasificacion():
             # Mientras que el atributo sea distinto al atributo meta.
             if atributo != self.atributo_meta:
                 # Enumeramos los posibles valores del atributo.
-                posibles_valores_atributo = self.enumerar_valores_atributo(
+                valores_atributo = self.enumerar_valores_atributo(
                     atributo,
                     dataset_entrenamiento
                 )
@@ -153,15 +181,31 @@ class Arbol_Clasificacion():
                     dataset_entrenamiento,
                     atributo,
                     valores_atributo_meta,
-                    posibles_valores_atributo,
+                    valores_atributo,
                 )
 
-                print(conteo_contra_meta)
+                # Calculamos las probabilidades de los valores en
+                # referencia con el atributo meta.
+                probabilidades_meta = {}
+
+                for valor in valores_atributo:
+                    probabilidades_meta[valor] = self.probabilidades(
+                        conteo_contra_meta[valor]
+                    )
+
+                # Calculamos las probabilidades de los valores del
+                # atributo.
+                probabilidades_atributo = self.probabilidades(conteo)
+
+                # Calculamos la ganancia del atributo.
+                ganancia = self.calcular_ganancia(
+                    probabilidades_atributo,
+                    probabilidades_meta
+                )
 
                 yield {
                     'atributo': atributo,
-                    # 'ganancia': ganancia,
-                    # 'hojas': hojas
+                    'ganancia': ganancia,
                 }
 
     def best_found(
@@ -170,7 +214,7 @@ class Arbol_Clasificacion():
         valores_atributo_meta: 'list[str]'
     ) -> str:
         # Heuristica contructiva con estrategia best-found.
-        mejor_atributo = ''
+        best = None
 
         # Conteo de los valores del atributo meta.
         conteo_atributos_meta = self.contar_valores_atributo(
@@ -184,11 +228,14 @@ class Arbol_Clasificacion():
             valores_atributo_meta
         )
 
+        best = generar_candidato.__next__()
+
         # Por cada candidato generado.
         for candidato in generar_candidato:
-            print(candidato)
+            if candidato['ganancia'] > best['ganancia']:
+                best = candidato
 
-        return mejor_atributo
+        return best
 
     def entrenar(self) -> None:
         '''
@@ -245,3 +292,5 @@ class Arbol_Clasificacion():
                 # Remueve el atributo del dataset
 
             break
+
+        # Ensamblar el arbol de decision
