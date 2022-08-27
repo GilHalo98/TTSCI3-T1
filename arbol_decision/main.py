@@ -16,10 +16,11 @@ import csv
 import argparse
 
 # Librerias de terceros.
+import pandas as pd
 
 # Librerias propias.
 from util.entropy import probabilidades, I, H
-from modelos.arbol_clasificacion import Arbol_Clasificacion
+from modelos.arbol_decision import Arbol_Decision
 
 
 # Formatea los argumentos pasados por consola.
@@ -49,29 +50,6 @@ def format_args() -> argparse.Namespace:
     return args
 
 
-def cargar_instancias(filedir: 'str') -> 'tuple[dict, int]':
-    # Se carga la instancia desde un archivo csv y se
-    # pasa a un formato dict.
-    instancias = {}
-    total_instancias = 0
-    with open(filedir, 'r+') as obj_csv:
-        cabezal = csv.reader(obj_csv)
-        atributos = next(cabezal)
-
-        for atributo in atributos:
-            instancias[atributo] = []
-
-        for linea in cabezal:
-            instancia = {}
-
-            for atributo, valor in zip(atributos, linea):
-                instancias[atributo].append(valor)
-
-            total_instancias += 1
-
-    return instancias, total_instancias
-
-
 def main(con_args: argparse.Namespace, *args, **kargs) -> None:
     # Cargamos los parametros pasados por consola.
     nombre_archivo: str = con_args.nombre_archivo
@@ -79,14 +57,17 @@ def main(con_args: argparse.Namespace, *args, **kargs) -> None:
 
     # Cargamos las instancias del archivo csv.
     print('Cargando instancias...')
-    dataset, long_dataset = cargar_instancias(nombre_archivo)
-    print('Instancia cargada con {} datos'.format(long_dataset))
+    dataset = pd.read_csv(nombre_archivo)
+    print('Instancias Cargadas, total de datos cargados {}'.format(
+        len(dataset)
+    ))
+    print(dataset)
 
     # Instanciamos el objeto arbol que contiene el modelo.
-    modelo = Arbol_Clasificacion(dataset, atributo_meta, long_dataset)
+    modelo = Arbol_Decision(dataset, atributo_meta)
 
-    # Iniciamos el proceso de entrenamiento del arbol de clasificacion.
-    modelo.entrenar()
+    # Iniciamos el proceso de entrenamiento del arbol de decision.
+    modelo.entrenar_modelo()
 
 
 if __name__ == '__main__':
