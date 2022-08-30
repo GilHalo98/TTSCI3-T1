@@ -32,14 +32,28 @@ class Arbol(dict):
         # Se inicializa la clase padre.
         super().__init__()
 
-        # Conteo del total de nodos en el arbol.
-        self.total_nodos = 0
-
         # Raiz del arbol.
         self.raiz = None
 
         # Generador de index del arbol.
-        self.get_index_nodo = self.__get_index()
+        self.get_index = self.__get_index()
+
+    def __str__(self) -> str:
+        '''
+            Genera  una representacion en string de la topologia
+            del arbol.
+        '''
+
+        representacion = ''
+
+        for id_nodo in self:
+
+            if id_nodo is self.raiz:
+                representacion += 'Raiz '
+
+            representacion += '{}\n'.format(self[id_nodo])
+
+        return representacion
 
     def __get_index(self) -> 'Generator[int, None, None]':
         # Indexacion de los nodos en el arbol.
@@ -52,9 +66,39 @@ class Arbol(dict):
 
     def esta_vacio(self) -> bool:
         # Retorna si existen nodos en el arbol.
-        return True if self.total_nodos <= 0 else False
+        return True if len(self) <= 0 else False
 
     def inicializado(self) -> bool:
         # Retorna si el arbol se encuentra inicializado, si existe un
         # nodo raiz.
         return True if self.raiz is not None else False
+
+    def agregar_conexion(
+        self,
+        id_nodo_a: 'str | int',
+        id_nodo_b: 'str | int',
+        costo: float = 1
+    ) -> None:
+        '''
+            Agrega una conexion de un nodo A a un nodo B: A -> B.
+        '''
+        self[id_nodo_a].conectar_con(id_nodo_b, costo)
+
+    def inicializar_nodo(
+        self,
+        id_nodo: 'str | int',
+        conexiones: dict = {},
+        *args,
+        **kargs
+    ) -> None:
+        '''
+            Inicializa un nodo en el arbol, la inicializacion de un nodo
+            unicamente reserva el espacio en el arbol, asi como el id
+            del nodo.
+        '''
+        self[id_nodo] = Nodo(
+            id_nodo,
+            conexiones,
+            *args,
+            **kargs
+        )
