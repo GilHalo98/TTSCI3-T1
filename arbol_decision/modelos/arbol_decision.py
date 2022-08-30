@@ -8,13 +8,16 @@
 
 
 # Librerias estandar.
+import sys
 import copy
-import fractions
+import pickle
 from collections import deque as Pila
 
 # Libreris de terceros.
-import pandas as pd
 import numpy as np
+import pandas as pd
+from progress.spinner import PixelSpinner as Spinner
+from progress.bar import ChargingBar as Barra
 
 # Librerias Propias
 from util.entropy import I, H
@@ -36,6 +39,67 @@ class Arbol_Decision():
         # Generador de id's para segmetnacion de dataset.
         self.get_id = self.__asignar_id_segmento()
 
+        # Estructura de datos que mantiene los nodos del arbol 
+        # de decision.
+        self.__arbol = Arbol()
+
+        # Spinner del segmentador de datos.
+        self.__spinner = Barra(
+            max=sys.getrecursionlimit(),
+            suffix='Nivel de recurción: %(index)d de %(max)d'
+        )
+
+        # Barra del ensamblado del arbol.
+        self.__barra = Barra()
+
+        # Barra de la evaluacion del modelo.
+        self.__barra_evaluacion = Barra()
+
+    def __str__(self) -> str:
+        '''
+            Representacion en str del arbol de decision.
+        '''
+        representacion = ''
+
+        # Si el arbol estavacio.
+        if self.__arbol.esta_vacio():
+            representacion += 'Arbol Vacio!'
+
+        # Sino, se generan las reglas logicas.
+        else:
+            representacion += '\nArbol de decisión como reglas lógicas:\n'
+            for id_nodo in self.__arbol:
+                nodo = self.__arbol[id_nodo]
+
+                for id_conexion in nodo.conexiones:
+                    valor_conexion = nodo.conexiones[id_conexion]
+
+                    nodo_conexion = self.__arbol[id_conexion]
+
+                    sentencia = ''
+
+                    if nodo_conexion.es_hoja():
+                        sentencia += 'if {} ({}) is {} then {} is {}'.format(
+                            nodo.propiedades['atributo'],
+                            nodo.id,
+                            nodo.conexiones[id_conexion],
+                            self.atributo_meta,
+                            nodo_conexion.propiedades['valor_meta']
+                        )
+
+                    else:
+                        sentencia += 'if {} ({}) is {} then evaluate {} ({})'.format(
+                            nodo.propiedades['atributo'],
+                            nodo.id,
+                            nodo.conexiones[id_conexion],
+                            nodo_conexion.propiedades['atributo'],
+                            nodo_conexion.id
+                        )
+
+                    representacion += sentencia + '\n'
+
+        return representacion
+
     def __asignar_id_segmento(self) -> str:
         '''
             Se asigna un id para la segmentacion de datos.
@@ -43,7 +107,7 @@ class Arbol_Decision():
 
         conteo_id = 0
         while True:
-            yield 'S{}'.format(conteo_id)
+            yield 'N{}'.format(conteo_id)
             conteo_id += 1
 
     def __calcular_entropias_atributo(
@@ -168,7 +232,8 @@ class Arbol_Decision():
         dataframe_meta: pd.DataFrame,
         pila_segmentacion: Pila,
         id_padre: str = None,
-        pureza: np.float64 = 0.0
+        pureza: np.float64 = 0.0,
+        valor_precedente: str = None
     ) -> None:
         '''
             Segmenta un dataset dado en multiples sub-sets, la
@@ -183,7 +248,9 @@ class Arbol_Decision():
         # de segentacion.
         item_segmentacion = {
             'id_padre': id_padre,
-            'id_segmento': id_segmento
+            'id_segmento': id_segmento,
+            'pureza': pureza,
+            'cantidad_datos': len(dataset)
         }
 
         # Si la pureza es distinta de 1.
@@ -206,7 +273,7 @@ class Arbol_Decision():
             auxiliar_dataset[self.atributo_meta] = dataframe_meta.values
 
             # Si la hoja es impura, se agrega la sentencia de seleccion.
-            item_segmentacion['sentencia'] = atributo_pivote
+            item_segmentacion['atributo'] = atributo_pivote
 
             # Lo siguente es segmentar los datos como tal.
             for valor_pivote in valores_pivote:
@@ -228,40 +295,148 @@ class Arbol_Decision():
                     segmento_dataframe_meta
                 )[0]
 
+                self.__spinner.next()
+
                 # Recursamos la funcion con el segmento de datos.
                 self.__segmentar_dataset(
                     segmento_dataset,
                     segmento_dataframe_meta,
                     pila_segmentacion,
                     id_segmento,
-                    pureza_valor
+                    pureza_valor,
+                    valor_pivote
                 )
 
         else:
-            pass
+            # Se almacena el valor final del atributo meta.
+            item_segmentacion['valor_meta'] = dataframe_meta.values[0]
 
+        # El valor precedente del atributo pivote se almacena.
+        item_segmentacion['valor_precedente'] = valor_precedente
+
+        # Agregamos el item a la pila de segmentacion.
         pila_segmentacion.append(item_segmentacion)
 
-    def __ensamblar_arbol(self) -> None:
+    def __ensamblar_arbol(
+        self,
+        pila_segmentacion: Pila,
+    ) -> None:
         '''
             Ensambla los arboles de decision dado una pila o historial
             de segmentacion, esta pila contiene elementos con
             la informacion necesaria para generar sub-arboles.
         '''
-        pass
+        self.__barra.max = len(pila_segmentacion)
+        while len(pila_segmentacion) > 0:
+            # Se recupera el item de la pila de segmentacion.
+            item_segmento = pila_segmentacion.pop()
 
-    def entrenar_modelo(self) -> None:
+            # Recuperamos aquellos valores del item que son parte de
+            # los atributos del nodo.
+            id_padre = item_segmento['id_padre']
+            id_segmento = item_segmento['id_segmento']
+            valor_precedente = item_segmento['valor_precedente']
+
+            # Los eliminamos del item.
+            del item_segmento['id_padre']
+            del item_segmento['id_segmento']
+            del item_segmento['valor_precedente']
+
+            # Instanciamos el item en el arbol.
+            self.__arbol.inicializar_nodo(
+                id_segmento,
+                {},
+                **item_segmento
+            )
+
+            # Identificamos si el item sera asignado como la raiz del
+            # arbol.
+            if id_padre is None:
+                self.__arbol.raiz = id_segmento
+
+            # Si no es el nodo raiz, eso quiere decir que tiene un nodo
+            # padre por lo cual se hace la conexion del nodo padre al
+            # nodo hijo.
+            else:
+                self.__arbol.agregar_conexion(
+                    id_padre,
+                    id_segmento,
+                    valor_precedente
+                )
+            self.__barra.next()
+
+    def __generar_matriz_confucion(
+        self,
+        valores: 'list[str]',
+    ) -> pd.DataFrame:
+        template = {}
+
+        valores.append(None)
+
+        for valor in valores:
+            template[valor] = [0 for _ in valores]
+
+        return pd.DataFrame(template, index=valores)
+
+    def evaluar_modelo(
+        self,
+        dataset_test: pd.DataFrame,
+        matriz_confucion: pd.DataFrame,
+        valores_atributo_meta: str,
+    ) -> float:
+        '''
+            Evalua la calidad del modelo generado.
+        '''
+
+        # Realizamos las predicciones con el dataset de test.
+        for index in dataset_test.index:
+            item = dataset_test.loc[index]
+            verdadero = item[self.atributo_meta]
+
+            prediccion = self.realizar_prediccion(item)
+
+            matriz_confucion[prediccion][verdadero] += 1
+
+            self.__barra_evaluacion.next()
+
+        # calculamos la certeza.
+        acertados = 0
+        for valor_meta in valores_atributo_meta:
+            acertados += matriz_confucion[valor_meta][valor_meta]
+
+        certeza = acertados / len(dataset_test)
+
+        return certeza
+
+    def entrenar_modelo(
+        self,
+        split_dataset_train: float = 0.6,
+        seed: int = 201
+    ) -> None:
         '''
             Genera el modelo del arbol de decision.
         '''
 
-        # Verificamos que el dataset no este vacio.
-        if len(self.dataset) <= 0:
+        # Realizamos un split de los datos para un dataset de
+        # entrenamiento y otro de evaluacion.
+        print('---> Split del dataset, fracción seleccionada {}'.format(
+            split_dataset_train
+        ))
+        dataset_train = self.dataset.sample(
+            frac=split_dataset_train,
+            random_state=seed
+        )
+        dataset_test = self.dataset.drop(dataset_train.index)
+        print('---> Elementos en dataset train: {}'.format(len(dataset_train)))
+        print('---> Elementos en dataset test: {}\n'.format(len(dataset_test)))
+
+        # Verificamos que el dataset de entrenamiento no este vacio.
+        if len(dataset_train) <= 0:
             raise Exception('Dataset vacio!')
 
         # Separamos el atributo meta de los demas atributos
-        dataframe_meta = self.dataset[self.atributo_meta]
-        dataset = self.dataset.drop(self.atributo_meta, axis=1)
+        dataframe_meta = dataset_train[self.atributo_meta]
+        dataset = dataset_train.drop(self.atributo_meta, axis=1)
 
         # Verificamos que la candiad de valores en el atributo meta sea
         # mayor que 1.
@@ -277,16 +452,95 @@ class Arbol_Decision():
         pila_segmentacion = Pila()
 
         # Ahora se llamara el procedimiento de segmentacion de datos.
+        self.__spinner.message = '---> Segmentación del dataset test'
+        self.__spinner.start()
         self.__segmentar_dataset(
             dataset,
             dataframe_meta,
             pila_segmentacion
         )
-
-        print('\n')
-        while len(pila_segmentacion) > 0:
-            print(pila_segmentacion.pop())
+        self.__spinner.finish()
 
         # Ahora se ensamblara el arbol de decision a partir de la
         # pila de segmentacion del dataset.
-        self.__ensamblar_arbol()
+        self.__barra.message = '---> Ensamblado del árbol de decisión'
+        self.__barra.start()
+        self.__ensamblar_arbol(pila_segmentacion)
+        self.__barra.finish()
+
+        # Generamos la matriz de confución del modelo.
+        valores_atributo_meta = list(
+            self.dataset[self.atributo_meta].value_counts().keys()
+        )
+
+        matriz_confucion = self.__generar_matriz_confucion(
+            valores_atributo_meta
+        )
+
+        print('\n')
+
+        # Por ultimo realizamos la evaluacion del modelo.
+        self.__barra_evaluacion.message = '---> Evaluando el modelo'
+        self.__barra_evaluacion.max = len(dataset_test)
+        self.__barra_evaluacion.start()
+        certeza = self.evaluar_modelo(
+            dataset_test,
+            matriz_confucion,
+            valores_atributo_meta
+        )
+        self.__barra_evaluacion.finish()
+
+        print('---> Certeza del modelo: {}'.format(certeza))
+        print('---> Matriz de confucion: \n{}'.format(matriz_confucion))
+
+    def realizar_prediccion(self, input: dict) -> str:
+        '''
+            Funcion que realiza la predicción de un input con el modelo
+            entrenado.
+        '''
+        nodo = self.__arbol[self.__arbol.raiz]
+
+        while not nodo.es_hoja():
+            atributo = nodo.propiedades['atributo']
+
+            encontrado = False
+            for id_conexion in nodo.conexiones:
+                valor = nodo.conexiones[id_conexion]
+
+                if input[atributo] == valor:
+                    nodo = self.__arbol[id_conexion]
+                    encontrado = True
+                    break
+
+            if not encontrado:
+                return None
+                break
+
+        return nodo.propiedades['valor_meta']
+
+    def save_modelo(self, nombre_archivo: str) -> None:
+        '''
+            Guarda en un archivo permanente el modelo.
+        '''
+
+        # Abre o crea y abre el archivo y guarda los datos.
+        with open('{}.bin'.format(nombre_archivo), 'wb+') as archivo:
+            pickle.dump(
+                self.__arbol,
+                archivo,
+                protocol=pickle.HIGHEST_PROTOCOL
+            )
+
+    def load_modelo(self, nombre_archivo: str) -> None:
+        '''
+            Carga un modelo de un archivo permanente.
+        '''
+
+        # Carga un archivo y sus datos.
+        with open(nombre_archivo, 'rb+') as archivo:
+            self.__arbol = pickle.load(archivo)
+
+            print(self.__arbol)
+
+    def get_arbol(self) -> Arbol:
+        return self.__arbol
