@@ -289,7 +289,8 @@ class Arbol_Decision():
                     axis=1
                 )
 
-                # Calculamos la pureza del valor de la segmentacion.
+                # Calculamos la purezao ganancia del valor de
+                # la segmentacion.
                 pureza_valor = 1 - self.__calcular_entropias_atributo(
                     segmento_dataset[atributo_pivote],
                     segmento_dataframe_meta
